@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital - Pacientes</title>
+</head>
+<body>
+    <h1>Lista de Pacientes</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Gênero</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Histórico Médico</th>
+        </tr>
+        {% for paciente in pacientes %}
+        <tr>
+            <td>{{ paciente.id }}</td>
+            <td>{{ paciente.nome }}</td>
+            <td>{{ paciente.idade }}</td>
+            <td>{{ paciente.genero }}</td>
+            <td>{{ paciente.endereco }}</td>
+            <td>{{ paciente.telefone }}</td>
+            <td>{{ paciente.email }}</td>
+            <td>{{ paciente.historico_medico }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('add') }}">Adicionar Novo Paciente</a>
+</body>
+</html>
